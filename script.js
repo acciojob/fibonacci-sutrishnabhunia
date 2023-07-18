@@ -1,17 +1,20 @@
-function fibonacci(num) {
-  if (num === 0) {
+function fibonacci(n) {
+  if (n <= 0) {
+    return null;
+  } else if (n === 1) {
     return 0;
-  } else if (num === 1) {
+  } else if (n === 2) {
     return 1;
   } else {
     let a = 0;
     let b = 1;
-    let result;
-    for (let i = 2; i <= num; i++) {
-      result = a + b;
+    for (let i = 3; i <= n; i++) {
+      let temp = a + b;
       a = b;
-      b = result;
+      b = temp;
     }
-    return result;
+    return b;
   }
 }
+
+module.exports = fibonacci;
