@@ -1,12 +1,17 @@
 function fibonacci(num) {
-  if (num <= 1) {
-    return num;
+  if (num === 0) {
+    return 0;
+  } else if (num === 1) {
+    return 1;
   } else {
-    return fibonacci(num - 1) + fibonacci(num - 2);
+    let a = 0;
+    let b = 1;
+    let result;
+    for (let i = 2; i <= num; i++) {
+      result = a + b;
+      a = b;
+      b = result;
+    }
+    return result;
   }
 }
-
-// Test the function
-var num = 10; // Change this value to get the nth Fibonacci number you want
-var result = fibonacci(num);
-console.log("The " + num + "th Fibonacci number is: " + result);
